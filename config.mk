@@ -83,7 +83,6 @@ else
 	MAN_INOTIFY = disabled
 endif
 
-
 MAN_DATE ?= ${shell date '+%B %d, %Y'}
 
 # Uncomment this to use dmalloc
