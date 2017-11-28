@@ -30,6 +30,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include "options.h"
 #include "events.h"
 
+#ifdef HAVE_INOTIFY
+#include <sys/inotify.h>
+#endif
+
 static void winwidget_unregister(winwidget win);
 static void winwidget_register(winwidget win);
 static winwidget winwidget_allocate(void);
@@ -77,6 +81,10 @@ static winwidget winwidget_allocate(void)
 	ret->click_offset_x = 0;
 	ret->click_offset_y = 0;
 	ret->has_rotated = 0;
+
+#ifdef HAVE_INOTIFY
+    ret->inotify_wd = -1;
+#endif
 
 	return(ret);
 }
