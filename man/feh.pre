@@ -193,6 +193,11 @@ for details.  Example usage:
 .
 Extra actions which can be set and triggered using the appropriate number key.
 .
+.It Cm --auto-reload
+.
+.Pq only if compiled with inotify=1
+automatically reload shown image if file was changed
+.
 .It Cm --auto-rotate
 .
 .Pq only if compiled with exif=1
